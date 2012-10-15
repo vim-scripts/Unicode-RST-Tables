@@ -1,0 +1,59 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4272
+
+Original plugin: vimscript #3041 
+Add CJK and Python 3 support.
+
+Here's my script compared to other alternatives:
+
+vimscript #3777: RST Tables (CJK)
+This script used gbk to encode the text, may not work with some language.
+My script used unicode, should works for any language.
+
+vimscript #3450: RST Tables
+This script doesn't support python 3.
+
+
+ This plugin allows to create and edit restructuredText tables easily.
+
+Its adds two new commands (<Leader> is \ by default):
+
+    <Leader><Leader>c  ->  Creates a new restructuredText table.
+    <Leader><Leader>f  ->  Fix table columns in a table.
+
+For example, if you have a paragraph with data like this:
+
+    nombre      apellido    edad
+    pepe        zarate      28
+    toto        garcia      29
+
+you can press "\\c" to create a simple table:
+
+    +--------+----------+------+
+    | nombre | apellido | edad |
+    +========+==========+======+
+    | pepe   | zarate   | 28   |
+    +--------+----------+------+
+    | toto   | garcia   | 29   |
+    +--------+----------+------+
+
+
+Now, if you change the table content, for example adding characters
+to the first content row.
+
+    +--------+----------+------+
+    | nombre | apellido | edad |
+    +========+==========+======+
+    | Un nombre muy largo que rompe la tabla   | zarate   | 28   |
+    +--------+----------+------+
+    | toto   | un appellido largo...   | 29   |
+    +--------+----------+------+
+
+you need to fix the columns widths. So, press "\\f" and you will gets:
+
+    +----------------------------------------+-----------------------+------+
+    | nombre                                 | apellido              | edad |
+    +========================================+=======================+======+
+    | Un nombre muy largo que rompe la tabla | zarate                | 28   |
+    +----------------------------------------+-----------------------+------+
+    | toto                                   | un appellido largo... | 29   |
+    +----------------------------------------+-----------------------+------+ 

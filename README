@@ -1,7 +1,8 @@
 This is a mirror of http://www.vim.org/scripts/script.php?script_id=4272
 
 Original plugin: vimscript #3041 
-Add CJK and Python 3 support.
+
+Fixed some bugs and add CJK and Python 3 support.
 
 Here's my script compared to other alternatives:
 
@@ -15,16 +16,22 @@ This script doesn't support python 3.
 
  This plugin allows to create and edit restructuredText tables easily.
 
-Its adds two new commands (<Leader> is \ by default):
+Its adds two new commands (<Leader> is "\" by default):
 
     <Leader><Leader>c  ->  Creates a new restructuredText table.
     <Leader><Leader>f  ->  Fix table columns in a table.
 
 For example, if you have a paragraph with data like this:
 
-    nombre      apellido    edad
-    pepe        zarate      28
-    toto        garcia      29
+ nombre      apellido    edad
+ pepe        zarate      28
+ toto        garcia      29
+
+Also, you could use "|" as delimiter:
+
+ nombre|apellido|edad
+ pepe|zarate|28
+ toto|garcia|29
 
 you can press "\\c" to create a simple table:
 

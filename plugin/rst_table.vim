@@ -70,11 +70,11 @@ def create_table(content):
 
     Por ejemplo::
 
-        >>> print create_table([['software', 'vesion'], ['python', '3.2'], ['vim', '7.3']])
+        >>> print(create_table([['software', 'vesion'], ['python', '3.3'], ['vim', '7.3']]))
         +----------+--------+
         | software | vesion |
         +==========+========+
-        | python   | 3.2    |
+        | python   | 3.3    |
         +----------+--------+
         | vim      | 7.3    |
         +----------+--------+
@@ -122,7 +122,7 @@ def get_table_bounds(current_row_index, are_in_callback):
     max = len(buffer)
     bottom = max - 1
 
-    for a in range(current_row_index, top, -1):
+    for a in range(current_row_index, -1, -1):
         if not are_in_callback(buffer[a]):
             top = a + 1
             break
@@ -328,7 +328,7 @@ def get_table_bounds(current_row_index, are_in_callback):
     max = len(buffer)
     bottom = max - 1
 
-    for a in range(current_row_index, top, -1):
+    for a in range(current_row_index, -1, -1):
         if not are_in_callback(buffer[a]):
             top = a + 1
             break
